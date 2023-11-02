@@ -7,4 +7,13 @@ type HeadCell = {
   label: string;
 };
 
-export type { Order, HeadCell };
+type TableProps = {
+  rows: Movie[];
+  headers: HeadCell[];
+  total: number;
+  onChangePage: (number: number) => void;
+  sizePerPage: number;
+  page: number;
+};
+
+export type { Order, HeadCell, TableProps };

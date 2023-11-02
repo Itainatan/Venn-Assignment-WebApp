@@ -7,7 +7,7 @@ export const headCells: HeadCell[] = [
   },
   {
     id: "Year",
-    label: "Species",
+    label: "Year",
   },
 ];
 

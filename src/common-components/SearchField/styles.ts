@@ -6,15 +6,13 @@ export const container = css`
   height: 107px;
   align-items: center;
   column-gap: 20px;
-  background: #efeff4;
   width: 100%;
   padding: 0 20px;
 `;
 
 export const input = css`
   border-radius: 4px;
-  border: 1px solid var(--components-input-border, #ddd);
-  background: var(--White, #fff);
+  border: 1px solid;
   width: 481px;
   height: 46px;
   font-size: 14px;
@@ -38,9 +36,8 @@ export const submitButton = css`
   width: 100px;
   padding: 12px 24px;
   border-radius: 8px;
-  border: 1px solid #000;
+  border: 1px solid;
   gap: 8px;
-  color: unset;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;

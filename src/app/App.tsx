@@ -9,20 +9,25 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { ColorModeContext } from "@src/theme";
 import { useTheme } from "@src/theme/hooks";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   const { theme, colorMode } = useTheme();
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Box css={styles.container}>
-          <Toast />
-          <Home />
-        </Box>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    <QueryClientProvider client={queryClient}>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Box css={styles.container}>
+            <Toast />
+            <Home />
+          </Box>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </QueryClientProvider>
   );
 }
 

@@ -2,7 +2,6 @@ import { css } from "@emotion/react";
 
 export const cell = css`
   background: #200062;
-  color: var(--cr-neutral-white, #fff);
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;

@@ -1,10 +1,10 @@
-import { Player } from "@src/app/types";
+import { Movie } from "@src/app/types";
 import { Order } from "./types";
 
 export function descendingComparator(
-  a: Player,
-  b: Player,
-  orderBy: keyof Player
+  a: Movie,
+  b: Movie,
+  orderBy: keyof Movie
 ) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -17,7 +17,7 @@ export function descendingComparator(
 
 export function getComparator(
   order: Order,
-  orderBy: keyof Player
+  orderBy: keyof Movie
 ): (a: any, b: any) => number {
   return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
@@ -25,11 +25,11 @@ export function getComparator(
 }
 
 export function stableSort(
-  array: readonly Player[],
-  comparator: (a: Player, b: Player) => number
+  array: readonly Movie[],
+  comparator: (a: Movie, b: Movie) => number
 ) {
   const stabilizedThis = array.map(
-    (el, index) => [el, index] as [Player, number]
+    (el, index) => [el, index] as [Movie, number]
   );
   stabilizedThis.sort((a, b) => {
     const order = comparator(a[0], b[0]);

@@ -1,9 +1,9 @@
-import { Player } from "@src/app/types";
+import { Movie } from "@src/app/types";
 
 type Order = "asc" | "desc";
 
 type HeadCell = {
-  id: keyof Player;
+  id: keyof Movie;
   label: string;
 };
 

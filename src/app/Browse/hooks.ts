@@ -2,9 +2,10 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { API_URL } from "../constants";
+import { Data } from "./types";
 
 export default function useBrowse() {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<Data | null>(null);
   const [page, setPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [searchName, setSearchName] = useState<string>("");
@@ -18,9 +19,7 @@ export default function useBrowse() {
       setIsLoading(true);
 
       const { data } = await axios.get(
-        `${API_URL}/character/?page=${page}${
-          searchName && `&name=${searchName}`
-        }`
+        `${API_URL}?page=${page}`
       );
 
       setData(data);

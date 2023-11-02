@@ -11,14 +11,15 @@ export default function Browse() {
     <Box>
       <SearchField
         onSubmit={onSubmit}
-        placeholder="Browse for characters..."
+        placeholder="Type movie name…"
         required={false}
       />
       {data && (
         <DataTable
-          rows={data.results}
+          rows={data.data}
           headers={headCells}
-          total={data.info.count}
+          total={data.total}
+          sizePerPage={data.per_page}
           onChangePage={setPage}
         />
       )}

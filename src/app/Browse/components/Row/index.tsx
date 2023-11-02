@@ -1,8 +1,7 @@
 import * as React from "react";
-import { Collapse, IconButton, TableCell, TableRow } from "@mui/material";
+import { IconButton, TableCell, TableRow } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PlayerCard from "@src/app/PlayerCard";
 import { Player } from "@src/app/types";
 import * as styles from "./styles";
 
@@ -39,13 +38,6 @@ export default function Row({ row, index }: { row: Player, index: number }) {
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon css={styles.icon}/>}
           </IconButton>
-        </TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={7}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <PlayerCard player={row} />
-          </Collapse>
         </TableCell>
       </TableRow>
     </>

@@ -5,8 +5,8 @@ import {
   TableBody,
   TableContainer,
   TablePagination,
+  Pagination,
 } from "@mui/material";
-import { Player } from "@src/app/types";
 import Row from "../Row";
 import { HeadCell } from "./types";
 import Head from "../Head";
@@ -18,11 +18,13 @@ export default function DataTable({
   headers,
   total,
   onChangePage,
+  sizePerPage = ROWS_PER_PAGE,
 }: {
-  rows: Player[];
+  rows: any[];
   headers: HeadCell[];
   total: number;
   onChangePage: (number: number) => void;
+  sizePerPage: number;
 }) {
   const { order, orderBy, sortedRows, page, onClickSort, setPage } = useTable({
     rows,
@@ -36,8 +38,8 @@ export default function DataTable({
         overflow: "auto",
       }}
     >
-      <Paper sx={{ width: "100%", mb: 2 }}>
-        <TableContainer>
+      <Paper sx={{ width: "100%", mb: 2, display: "flex", justifyContent: "center" }}>
+        {/* <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
@@ -55,18 +57,28 @@ export default function DataTable({
               ))}
             </TableBody>
           </Table>
-        </TableContainer>
-        <TablePagination
+        </TableContainer> */}
+        <Pagination
+          count={total}
+          page={page}
+          onChange={(event, value) => {
+            onChangePage(value + 1);
+            setPage(value);
+          }}
+          variant="outlined"
+          shape="rounded"
+        />
+        {/* <TablePagination
           component="div"
           count={total}
-          rowsPerPage={ROWS_PER_PAGE}
+          rowsPerPage={sizePerPage}
           rowsPerPageOptions={[]}
           page={page}
           onPageChange={(event, value) => {
             onChangePage(value + 1);
             setPage(value);
           }}
-        />
+        /> */}
       </Paper>
     </Box>
   );

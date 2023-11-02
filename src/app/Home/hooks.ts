@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { MODE } from "../constants";
+// import { MODE } from "../constants";
 
 const useHome = () => {
-  const [mode, setMode] = useState<MODE>(MODE.Browse);
+  // const [mode, setMode] = useState<MODE>(MODE.Browse);
 
   return {
-    mode,
-    setMode,
+    // mode,
+    // setMode,
   };
 };
 

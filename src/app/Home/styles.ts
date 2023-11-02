@@ -14,9 +14,9 @@ export const container = css`
 export const card = css`
   display: flex;
   flex-direction: column;
-  position: relative;
-  bottom: 5vh;
+  width: 100%;
   row-gap: 48px;
+  margin-top: 20px;
 `;
 
 export const main = css`

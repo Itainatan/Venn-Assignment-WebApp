@@ -1,16 +1,10 @@
-import { Box, CardMedia } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import * as styles from "./styles";
-import title from '../../assets/title.png'
 
 export function Title() {
-    return (
-        <Box css={styles.container}>
-            <CardMedia
-                sx={{ height: "200px", width: "200px", objectFit: "contain"  }}
-                image={title}
-                title="venn"
-            />
-
-        </Box>
-    )
+  return (
+    <Box css={styles.titleContainer}>
+      <Typography>Search for any movie you like:</Typography>
+    </Box>
+  );
 }

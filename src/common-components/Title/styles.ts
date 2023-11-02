@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-export const container = css`
+export const titleContainer = css`
   justify-content: center;
   width: 100%;
   align-content: center;

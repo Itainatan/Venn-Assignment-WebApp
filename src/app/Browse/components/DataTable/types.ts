@@ -10,11 +10,12 @@ type HeadCell = {
 type TableProps = {
   rows: Movie[];
   headers: HeadCell[];
-  total: number;
+  total?: number;
   onChangePage: (number: number) => void;
-  sizePerPage: number;
+  sizePerPage?: number;
   page: number;
   totalPages: number;
+  isLoading: boolean;
 };
 
 export type { Order, HeadCell, TableProps };

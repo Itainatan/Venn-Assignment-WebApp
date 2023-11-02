@@ -6,7 +6,7 @@ import DataTable from "./components/DataTable";
 import * as styles from "./styles";
 
 export default function Browse() {
-  const { data, setPage, onSubmit, page } = useBrowse();
+  const { data, setPage, onSubmit, page, isLoading } = useBrowse();
 
   return (
     <Box css={styles.browseContainer}>
@@ -19,11 +19,10 @@ export default function Browse() {
         <DataTable
           rows={data.data}
           headers={headCells}
-          total={data.total}
           totalPages={data.total_pages}
-          sizePerPage={data.per_page}
           onChangePage={setPage}
           page={page}
+          isLoading={isLoading}
         />
       )}
     </Box>

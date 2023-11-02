@@ -10,13 +10,21 @@ export default function useBrowse() {
   const [page, setPage] = useState<number>(1);
   const [title, setTitle] = useState<string>("");
 
-  const { isLoading, error, data, refetch } = useQuery(API_URL, () =>
-    getMovies({ page, title })
-  );
+  const {
+    isFetching: isLoading,
+    error,
+    data,
+    refetch,
+  } = useQuery(API_URL, () => getMovies({ page, title }));
 
   useEffect(() => {
     refetch();
   }, [page, title]);
+
+  useEffect(() => {
+    if (error) toast.error("an error, please try again");
+    if (data && !data?.data.length) toast.info("no data to present");
+  }, [error, data?.data]);
 
   const onSubmit = useCallback(
     (value: string) => {

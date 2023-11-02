@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-export const container = css`
+export const homeContainer = css`
   color: #000;
   font-family: Roboto, sans-serif;
   width: 100vw;
@@ -11,14 +11,10 @@ export const container = css`
   flex-direction: column;
 `;
 
-export const card = css`
+export const main = css`
   display: flex;
   flex-direction: column;
   width: 100%;
   row-gap: 48px;
   margin-top: 20px;
-`;
-
-export const main = css`
-  padding: 0 20%;
 `;

@@ -2,7 +2,7 @@ import { SerializedStyles } from "@emotion/react";
 import Toast from "@src/common-components/Toast";
 import * as styles from "./styles";
 import Home from "@src/app/Home";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -16,6 +16,7 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <Box css={styles.container}>
           <Toast />
           <Home />

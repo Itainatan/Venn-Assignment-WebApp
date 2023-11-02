@@ -7,15 +7,11 @@ import {
   TableSortLabel,
 } from "@mui/material";
 import { visuallyHidden } from "@mui/utils";
-import { Player } from "@src/app/types";
 import * as styles from "./styles";
 import { Order, HeadCell } from "../DataTable/types";
 
 type Props = {
-  onRequestSort: (
-    event: React.MouseEvent<unknown>,
-    property: keyof Player
-  ) => void;
+  onRequestSort: (event: React.MouseEvent<unknown>, property: any) => void;
   order: Order;
   orderBy: string;
   headers: HeadCell[];
@@ -24,7 +20,7 @@ type Props = {
 export default function Head(props: Props) {
   const { order, orderBy, onRequestSort, headers } = props;
   const createSortHandler =
-    (property: keyof Player) => (event: React.MouseEvent<unknown>) => {
+    (property: any) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 
@@ -53,16 +49,6 @@ export default function Head(props: Props) {
             </TableSortLabel>
           </TableCell>
         ))}
-
-        <TableCell
-          key="more"
-          align="center"
-          padding="normal"
-          sortDirection={false}
-          css={styles.cell}
-        >
-          More
-        </TableCell>
       </TableRow>
     </TableHead>
   );

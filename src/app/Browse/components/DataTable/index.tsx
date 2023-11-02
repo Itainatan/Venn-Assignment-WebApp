@@ -59,7 +59,7 @@ export default function DataTable({
           </Table>
         </TableContainer> */}
         <Pagination
-          count={total}
+          count={total / sizePerPage}
           page={page}
           onChange={(event, value) => {
             onChangePage(value + 1);

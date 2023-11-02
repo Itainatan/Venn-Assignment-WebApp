@@ -8,6 +8,7 @@ export const container = css`
   column-gap: 20px;
   background: #efeff4;
   width: 100%;
+  padding: 0 20px;
 `;
 
 export const input = css`
@@ -20,7 +21,6 @@ export const input = css`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0.25px;
 
   .MuiOutlinedInput-input {
     height: 20px;
@@ -40,14 +40,10 @@ export const submitButton = css`
   border-radius: 8px;
   border: 1px solid #000;
   gap: 8px;
-  background: #4310ae;
-  box-shadow: 0px 6px 15px 0px rgba(67, 16, 174, 0.12),
-    0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;
-  color: var(--White, #fff);
+  color: unset;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  letter-spacing: 0.64px;
   text-transform: uppercase;
 `;

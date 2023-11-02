@@ -6,6 +6,3 @@ export const titleContainer = css`
   align-content: center;
   display: flex;
 `;
-
-
-

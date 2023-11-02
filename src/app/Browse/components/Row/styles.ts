@@ -10,7 +10,3 @@ export const cell = (index: number) => css`
   line-height: 115%;
   letter-spacing: 0.14px;
 `;
-
-export const icon = css`
-  color: #05111a;
-`;

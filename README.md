@@ -1,6 +1,6 @@
 ## Movies Search
 
-<!-- 👉🏽 [Demo](https://justt-assignment-webapp.pages.dev/) -->
+👉🏽 [Demo](https://admirable-gnome-0e0ade.netlify.app)
 
 💻 Built with React Hooks | TypeScript | React Query | MUI | CSS Emotion | React Hook Form .
 

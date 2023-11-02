@@ -14,6 +14,7 @@ type TableProps = {
   onChangePage: (number: number) => void;
   sizePerPage: number;
   page: number;
+  totalPages: number;
 };
 
 export type { Order, HeadCell, TableProps };

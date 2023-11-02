@@ -23,7 +23,6 @@ export const input = css`
   .MuiOutlinedInput-input {
     height: 20px;
     padding: 13px;
-    color: #4310ae;
 
     &::placeholder {
       color: #a1a1a1;

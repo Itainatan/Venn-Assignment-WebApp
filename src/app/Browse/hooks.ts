@@ -8,24 +8,24 @@ import getMovies from "@src/services/movies";
 
 export default function useBrowse() {
   const [page, setPage] = useState<number>(1);
-  const [searchName, setSearchName] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
 
   const { isLoading, error, data, refetch } = useQuery(API_URL, () =>
-    getMovies({ page })
+    getMovies({ page, title })
   );
 
   useEffect(() => {
     refetch();
-  }, [page, searchName]);
+  }, [page, title]);
 
   const onSubmit = useCallback(
     (value: string) => {
-      if (value.toLowerCase() !== searchName.toLowerCase()) {
-        setSearchName(value);
+      if (value.toLowerCase() !== title.toLowerCase()) {
+        setTitle(value);
         setPage(1);
       }
     },
-    [searchName]
+    [title]
   );
 
   return { data, isLoading, page, onSubmit, setPage };

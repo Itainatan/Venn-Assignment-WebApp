@@ -20,6 +20,7 @@ export default function Browse() {
           rows={data.data}
           headers={headCells}
           total={data.total}
+          totalPages={data.total_pages}
           sizePerPage={data.per_page}
           onChangePage={setPage}
           page={page}

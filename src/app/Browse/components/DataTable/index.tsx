@@ -8,16 +8,14 @@ import {
 import Row from "../Row";
 import { TableProps } from "./types";
 import Head from "../Head";
-import { ROWS_PER_PAGE } from "../../constants";
 import useTable from "./hooks";
 import * as styles from "./styles";
 
 export default function DataTable({
   rows,
   headers,
-  total,
   onChangePage,
-  sizePerPage = ROWS_PER_PAGE,
+  totalPages,
   page,
 }: TableProps) {
   const { order, orderBy, sortedRows, onClickSort } = useTable({
@@ -27,11 +25,7 @@ export default function DataTable({
   return (
     <Paper css={styles.tableContainer}>
       <TableContainer>
-        <Table
-          sx={{ minWidth: 750 }}
-          aria-labelledby="tableTitle"
-          size={"small"}
-        >
+        <Table aria-labelledby="tableTitle" size={"small"}>
           <Head
             order={order}
             orderBy={orderBy}
@@ -46,7 +40,7 @@ export default function DataTable({
         </Table>
       </TableContainer>
       <Pagination
-        count={total / sizePerPage}
+        count={totalPages}
         page={page}
         onChange={(event, value) => {
           onChangePage(value);
